@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  database:
+    image: postgres
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgresql
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+
+  backend:
+    ports:
+      - "80:8080"
+    image: k1per32/movie_application
+    environment:
+      DATASOURCE_HOST: host.docker.internal
+
+#  prometheus:
+#    image: prom/prometheus
+#    ports:
+#      - "9090:9090"
+#    depends_on:
+#      - backend
+#
+#  grafana:
+#    image: grafana/grafana
+#    ports:
+#      - "3000:3000"
+#    depends_on:
+#      - prometheus

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATASOURCE_HOST:localhost}:5432/postgres
+    username: postgres
+    driver-class-name: org.postgresql.Driver
+    password: postgresql
+    hikari:
+      schema: movie_application
+  jpa:
+    show-sql: true
+    generate-ddl: true
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+    default-schema: movie_application
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
