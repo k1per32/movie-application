@@ -38,4 +38,20 @@ git clone https://github.com/k1per32/movie-application.git
 
 Для того, чтобы открыть swagger перейдите по url: /swagger-ui.html
 
+### Создание нового пользователя
+
+Для того, чтобы создать нового пользователя необходимо в сервисе для отправки запросов к API (например Postman) перейти
+по uri:
+
+### POST "/user/register"
+
+И ввести свои данные для регистрации по образцу
+
+{
+    "email" : "your email",
+    "username" : "your username",
+    "name" : "your name",
+    "password" : "your password"
+}
+
 
