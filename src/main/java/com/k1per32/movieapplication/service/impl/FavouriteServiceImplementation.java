@@ -5,7 +5,6 @@ import com.k1per32.movieapplication.dto.MovieDto;
 import com.k1per32.movieapplication.entity.Favourite;
 import com.k1per32.movieapplication.entity.Movie;
 import com.k1per32.movieapplication.entity.User;
-import com.k1per32.movieapplication.exception.AlreadyExistException;
 import com.k1per32.movieapplication.mapper.MovieMapper;
 import com.k1per32.movieapplication.repository.FavouriteRepository;
 import com.k1per32.movieapplication.repository.MovieRepository;

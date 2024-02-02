@@ -1,12 +1,12 @@
 -- liquibase formatted sql
--- changeset k1per32:1
+-- changeset k1per32:2
 CREATE SCHEMA if not exists movie_application;
 
 CREATE TABLE if not exists movie_application.users
 (
     id_users serial,
     email    varchar unique,
-    username varchar unique,
+    username varchar,
     name     varchar,
     password varchar,
     enabled  boolean,
@@ -31,7 +31,7 @@ CREATE TABLE if not exists movie_application.favourites
     FOREIGN KEY (id_movies_fav) REFERENCES movie_application.movies ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE movie_application.authorities
+CREATE TABLE if not exists movie_application.authorities
 (
     username  VARCHAR(50),
     authority VARCHAR(50),
